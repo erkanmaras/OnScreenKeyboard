@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyboardKeyState.cs" />
+    <Compile Include="KeyStateAction.cs" />
     <Compile Include="IKeyboardBuilder.cs" />
     <Compile Include="ILayoutContainer.cs" />
     <Compile Include="Keyboard.cs">
@@ -55,6 +57,7 @@
     </Compile>
     <Compile Include="KeyboardLayoutCell.cs" />
     <Compile Include="KeyboardLayoutManager.cs" />
+    <Compile Include="KeyStateStyle.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableLayoutPanel.cs">

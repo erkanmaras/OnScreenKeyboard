@@ -77,40 +77,4 @@ namespace OnScreenKeyboard
         }
 
     }
-
-    internal class KeyboardKeyState
-    {
-        public KeyStateAction StateAction;
-        public KeyStateStyle Style;
-        public string KeyCode = string.Empty;
-        public string KeyCodeDeadAcute = string.Empty;
-        public string KeyCodeDeadCircumflex = string.Empty;
-        public string KeyCodeDeadDiaeresis = string.Empty;
-        public string KeyCodeDeadGrave = string.Empty;
-        public string KeyCodeDeadTilde = string.Empty;
-        public string Text = string.Empty;
-    }
-
-    internal enum KeyStateAction
-    {
-        Alt = 4,
-        AltGr = 5,
-        CapsLock = 2,
-        Control = 3,
-        DeadAcute = 7,
-        DeadCircumflex = 9,
-        DeadDiaeresis = 10,
-        DeadGrave = 8,
-        DeadTilde = 6,
-        Send = 0,
-        Shift = 1
-    }
-
-    internal enum KeyStateStyle
-    {
-        AltGr = 2,
-        AltGrShift = 3,
-        Default = 0,
-        Shift = 1
-    }
 }

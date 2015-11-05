@@ -33,7 +33,7 @@ namespace OnScreenKeyboard
 
             if (rootElement == null)
             {
-                throw new InvalidOperationException("Keyboard definition xml not valid!");
+                throw new InvalidOperationException("<KeyboardDefinition> element not found in definition!");
             }
 
             CreateLayout(rootElement, keyboard);
@@ -44,29 +44,37 @@ namespace OnScreenKeyboard
             var keyElements = rootElement.Elements("Key");
             if (keyElements == null)
             {
-                throw new InvalidOperationException("Keyboard definition xml not valid!");
+                throw new InvalidOperationException("<Key> element not found in definition!");
             }
 
             try
             {
-                foreach (var key in keyElements)
+                foreach (var keyElement in keyElements)
                 {
                     var keyboardKey = new KeyboardKey();
-                    var stateElements = key.Elements("State");
-                    foreach (var state in stateElements)
+                    var stateElements = keyElement.Elements("State");
+                    foreach (var stateElement in stateElements)
                     {
-                        keyboardKey.AddState(GetKeyState(state));
+                        keyboardKey.AddState(GetKeyState(stateElement));
                     }
-                    keyboard.LayoutManager.AddCell(keyboardKey, GetLocation(key), GetSize(key));
+                    keyboard.LayoutManager.AddCell(keyboardKey, GetLocation(keyElement), GetSize(keyElement));
                     keyboard.Controls.Add(keyboardKey);
                 }
 
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("<State> element can't read!", ex);
+            }
+
+            try
+            {
                 keyboard.LayoutManager.Rows = Convert.ToInt16(rootElement.Attribute("Rows").Value);
                 keyboard.LayoutManager.Cols = Convert.ToInt16(rootElement.Attribute("Cols").Value);
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException("Keyboard definition xml can't read!", ex);
+                throw new InvalidOperationException("Rows Or Cols attiribute can't read!", ex);
             }
 
             keyboard.LayoutManager.PerformLayout();
@@ -120,5 +128,6 @@ namespace OnScreenKeyboard
         {
             return new Size(Convert.ToInt16(keyElement.Attribute("Width").Value), Convert.ToInt16(keyElement.Attribute("Height").Value));
         }
+
     }
 }

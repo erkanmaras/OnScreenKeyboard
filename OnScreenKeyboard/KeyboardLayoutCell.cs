@@ -6,8 +6,7 @@ namespace OnScreenKeyboard
     internal class KeyboardLayoutCell
     {
         public KeyboardLayoutCell()
-        {
-        }
+        {}
 
         public KeyboardLayoutCell(Control control, Point position, Size size)
         {
@@ -17,9 +16,7 @@ namespace OnScreenKeyboard
         }
 
         public Control Control { get; set; }
-
         public Point Position { get; set; }
-
         public Size Size { get; set; }
     }
 }
