@@ -57,10 +57,8 @@ namespace OnScreenKeyboard
                     {
                         keyboardKey.AddState(GetKeyState(stateElement));
                     }
-                    keyboard.LayoutManager.AddCell(keyboardKey, GetLocation(keyElement), GetSize(keyElement));
-                    keyboard.Controls.Add(keyboardKey);
+                    keyboard.AddKey(keyboardKey, GetLocation(keyElement), GetSize(keyElement));
                 }
-
             }
             catch (Exception ex)
             {
@@ -69,15 +67,14 @@ namespace OnScreenKeyboard
 
             try
             {
-                keyboard.LayoutManager.Rows = Convert.ToInt16(rootElement.Attribute("Rows").Value);
-                keyboard.LayoutManager.Cols = Convert.ToInt16(rootElement.Attribute("Cols").Value);
+                keyboard.SetGirdSize(Convert.ToInt16(rootElement.Attribute("Rows").Value), Convert.ToInt16(rootElement.Attribute("Cols").Value));
             }
             catch (Exception ex)
             {
                 throw new InvalidOperationException("Rows Or Cols attiribute can't read!", ex);
             }
 
-            keyboard.LayoutManager.PerformLayout();
+            keyboard.PerformKeyboardLayout();
         }
 
         private string GetAttributeValueOrDefault(XElement element, string name, string defaultValue = "")
@@ -110,12 +107,12 @@ namespace OnScreenKeyboard
                 Text = GetAttributeValueOrDefault(stateElement, "Text", string.Empty),
                 StateAction = (KeyStateAction)Enum.Parse(typeof(KeyStateAction), GetAttributeValueOrDefault(stateElement, "Action", "Send")),
                 Style = (KeyStateStyle)Enum.Parse(typeof(KeyStateStyle), GetAttributeValueOrDefault(stateElement, "Style", "Default")),
-                KeyCode = GetAttributeValueOrDefault(stateElement, "KeyCode"),
-                KeyCodeDeadCircumflex = GetAttributeValueOrDefault(stateElement, "KeyCodeDeadCircumflex"),
-                KeyCodeDeadAcute = GetAttributeValueOrDefault(stateElement, "KeyCodeDeadAcute"),
-                KeyCodeDeadDiaeresis = GetAttributeValueOrDefault(stateElement, "KeyCodeDeadDiaeresis"),
-                KeyCodeDeadGrave = GetAttributeValueOrDefault(stateElement, "KeyCodeDeadGrave"),
-                KeyCodeDeadTilde = GetAttributeValueOrDefault(stateElement, "KeyCodeDeadTilde")
+                KeyCode = GetAttributeValueOrDefault(stateElement, "Code"),
+                KeyCodeDeadCircumflex = GetAttributeValueOrDefault(stateElement, "DeadCircumflex"),
+                KeyCodeDeadAcute = GetAttributeValueOrDefault(stateElement, "DeadAcute"),
+                KeyCodeDeadDiaeresis = GetAttributeValueOrDefault(stateElement, "DeadDiaeresis"),
+                KeyCodeDeadGrave = GetAttributeValueOrDefault(stateElement, "DeadGrave"),
+                KeyCodeDeadTilde = GetAttributeValueOrDefault(stateElement, "DeadTilde")
             };
         }
 

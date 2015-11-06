@@ -9,7 +9,7 @@ namespace OnScreenKeyboard
     [ToolboxItem(false)]
     public class TableLayoutPanel : Panel, ILayoutContainer
     {
-        private KeyboardLayoutManager _layoutManager;
+        private TableLayoutManager _layoutManager;
         private bool _layoutSuspended;
 
         public TableLayoutPanel()
@@ -21,11 +21,11 @@ namespace OnScreenKeyboard
              SetStyle(ControlStyles.UserPaint, true);
         }
 
-        internal KeyboardLayoutManager LayoutManager
+        internal TableLayoutManager LayoutManager
         {
             get
             {
-                return _layoutManager ?? (_layoutManager = new KeyboardLayoutManager(this)
+                return _layoutManager ?? (_layoutManager = new TableLayoutManager(this)
                 {
                     GutterWidth = GutterSize,
                     GutterHeight = GutterSize
@@ -33,7 +33,7 @@ namespace OnScreenKeyboard
             }
         }
 
-        internal List<KeyboardLayoutCell> Cells
+        internal List<TableLayoutCell> Cells
         {
             get { return LayoutManager.Cells; }
         }

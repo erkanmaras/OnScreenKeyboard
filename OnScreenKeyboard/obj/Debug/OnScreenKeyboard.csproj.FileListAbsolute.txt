@@ -1,5 +1,0 @@
-c:\users\erkanmaras.nebim\documents\visual studio 2013\Projects\OnScreenKeyboard\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.dll
-c:\users\erkanmaras.nebim\documents\visual studio 2013\Projects\OnScreenKeyboard\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.pdb
-c:\users\erkanmaras.nebim\documents\visual studio 2013\Projects\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.dll
-c:\users\erkanmaras.nebim\documents\visual studio 2013\Projects\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.pdb
-C:\Users\ErkanMaras.NEBIM\Documents\visual studio 2013\Projects\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.csprojResolveAssemblyReference.cache

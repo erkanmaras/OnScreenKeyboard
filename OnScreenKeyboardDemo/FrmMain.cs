@@ -9,7 +9,7 @@ namespace OnScreenKeyboardDemo
         public FrmMain()
         {
             InitializeComponent();
-            keyboardControl.Build();
+            keyboardControl.BuildDefaultDefinition();
         }
 
         private void lblClickMe_Click(object sender, EventArgs e)
@@ -17,6 +17,7 @@ namespace OnScreenKeyboardDemo
             OnScreenKeyboard.Keyboard.ShowDialog("Keyboard Caption",
                                                  new Point(DesktopLocation.X , DesktopLocation.Y + Height),
                                                  new Size(900,290));
+
         }
     }
 }

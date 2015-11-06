@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace OnScreenKeyboard
 {
-    internal class KeyboardLayoutCell
+    public class TableLayoutCell
     {
-        public KeyboardLayoutCell()
+        public TableLayoutCell()
         {}
 
-        public KeyboardLayoutCell(Control control, Point position, Size size)
+        public TableLayoutCell(Control control, Point position, Size size)
         {
             Control = control;
             Position = position;

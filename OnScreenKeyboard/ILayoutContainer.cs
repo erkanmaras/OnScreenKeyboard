@@ -2,7 +2,7 @@
 
 namespace OnScreenKeyboard
 {
-    internal interface ILayoutContainer
+    public interface ILayoutContainer
     {
         Size ContainerClientSize { get; }
     }

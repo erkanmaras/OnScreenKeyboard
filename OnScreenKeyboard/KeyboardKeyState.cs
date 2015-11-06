@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace OnScreenKeyboard
+﻿namespace OnScreenKeyboard
 {
-    internal class KeyboardKeyState
+    public class KeyboardKeyState
     {
         public KeyStateAction StateAction;
         public KeyStateStyle Style;

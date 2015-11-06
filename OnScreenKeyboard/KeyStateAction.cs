@@ -1,6 +1,6 @@
 ﻿namespace OnScreenKeyboard
 {
-    internal enum KeyStateAction
+    public enum KeyStateAction
     {
         Alt = 4,
         AltGr = 5,

@@ -19,7 +19,7 @@ namespace OnScreenKeyboard
         public KeyboardDialog()
         {
             InitializeComponent();
-            _keyboard.Build();
+            _keyboard.BuildDefaultDefinition();
         }
 
         protected override CreateParams CreateParams

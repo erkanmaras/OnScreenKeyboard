@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace OnScreenKeyboard
 {
-    internal class KeyboardLayoutManager
+    public class TableLayoutManager
     {
-        public List<KeyboardLayoutCell> Cells = new List<KeyboardLayoutCell>();
+        public List<TableLayoutCell> Cells = new List<TableLayoutCell>();
         public ILayoutContainer Container;
         public int GutterHeight = 5;
         public int GutterWidth = 5;
@@ -16,12 +16,12 @@ namespace OnScreenKeyboard
         public int Rows;
         public int Cols;
 
-        public KeyboardLayoutManager(ILayoutContainer container)
+        public TableLayoutManager(ILayoutContainer container)
         {
             Container = container;
         }
 
-        public KeyboardLayoutManager(ILayoutContainer container, int gutterHeight, int gutterWidth, int marginHeight,
+        public TableLayoutManager(ILayoutContainer container, int gutterHeight, int gutterWidth, int marginHeight,
             int marginWidth, int rows, int cols)
         {
             Container = container;
@@ -33,7 +33,7 @@ namespace OnScreenKeyboard
             Cols = cols;
         }
 
-        public KeyboardLayoutManager(ILayoutContainer container, int rows, int cols)
+        public TableLayoutManager(ILayoutContainer container, int rows, int cols)
         {
             Container = container;
             Rows = rows;
@@ -98,22 +98,22 @@ namespace OnScreenKeyboard
 
         public void AddCell(Control control, Point position, Size size)
         {
-            Cells.Add(new KeyboardLayoutCell(control, position, size));
+            Cells.Add(new TableLayoutCell(control, position, size));
         }
 
         public void AddCell(Control control, Point position)
         {
-            Cells.Add(new KeyboardLayoutCell(control, position, new Size(1, 1)));
+            Cells.Add(new TableLayoutCell(control, position, new Size(1, 1)));
         }
 
         public void AddCell(Control control, int col, int row)
         {
-            Cells.Add(new KeyboardLayoutCell(control, new Point(col, row), new Size(1, 1)));
+            Cells.Add(new TableLayoutCell(control, new Point(col, row), new Size(1, 1)));
         }
 
         public void AddCell(int col, int row)
         {
-            Cells.Add(new KeyboardLayoutCell(null, new Point(col, row), new Size(1, 1)));
+            Cells.Add(new TableLayoutCell(null, new Point(col, row), new Size(1, 1)));
         }
     }
 }

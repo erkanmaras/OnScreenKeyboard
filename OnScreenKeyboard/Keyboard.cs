@@ -36,19 +36,7 @@ namespace OnScreenKeyboard
             Resize += Keyboard_Resize;
         }
 
-        public void Build(string filePath)
-        {
-            var builder = new KeyboardBuilder();
-            builder.Build(filePath, this);
-        }
-
-        public void Build(XDocument definition)
-        {
-            var builder = new KeyboardBuilder();
-            builder.Build(definition, this);
-        }
-
-        public void Build()
+        public void BuildDefaultDefinition()
         {
             XDocument definition;
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Format("{0}.Definitions.{1}", GetType().Namespace, "KeyboardDefinition_en.xml")))
@@ -59,7 +47,24 @@ namespace OnScreenKeyboard
                     definition = XDocument.Load(reader);
                 }
             }
-            Build(definition);
+            new KeyboardBuilder().Build(definition,this);
+        }
+
+        public void AddKey(KeyboardKey key, Point keyLocation, Size keySize)
+        {
+            LayoutManager.AddCell(key, keyLocation, keySize);
+            Controls.Add(key);
+        }
+
+        public void SetGirdSize(short rows, short cols)
+        {
+            LayoutManager.Rows = rows;
+            LayoutManager.Cols = cols;
+        }
+
+        public void PerformKeyboardLayout()
+        {
+            LayoutManager.PerformLayout();
         }
 
         private void ClearControlAltShiftState()

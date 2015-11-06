@@ -55,8 +55,8 @@
     <Compile Include="KeyboardKey.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="KeyboardLayoutCell.cs" />
-    <Compile Include="KeyboardLayoutManager.cs" />
+    <Compile Include="TableLayoutCell.cs" />
+    <Compile Include="TableLayoutManager.cs" />
     <Compile Include="KeyStateStyle.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

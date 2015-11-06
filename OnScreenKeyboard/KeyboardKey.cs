@@ -8,7 +8,7 @@ using System.Windows.Forms.VisualStyles;
 namespace OnScreenKeyboard
 {
     [ToolboxItem(false)]
-    public sealed class KeyboardKey : Button
+    public class KeyboardKey : Button, IKeyboardKey
     {
         private KeyStateStyle _currentStyle;
         private bool _isLocked;
@@ -27,7 +27,7 @@ namespace OnScreenKeyboard
             Font = new Font(Font, FontStyle.Bold);
         }
 
-        internal KeyStateStyle CurrentStyle
+        public KeyStateStyle CurrentStyle
         {
             get { return _currentStyle; }
             set
@@ -47,12 +47,12 @@ namespace OnScreenKeyboard
             }
         }
 
-        internal void AddState(KeyboardKeyState state)
+        public void AddState(KeyboardKeyState state)
         {
             _states.Add(state);
         }
 
-        internal KeyboardKeyState GetCurrentState()
+        public KeyboardKeyState GetCurrentState()
         {
             return _states.FirstOrDefault(state => (state.Style == CurrentStyle));
         }
@@ -77,4 +77,14 @@ namespace OnScreenKeyboard
         }
 
     }
+
+    public interface IKeyboardKey
+    {
+        KeyStateStyle CurrentStyle { get; }
+        bool IsLocked { get; set; }
+        KeyboardKeyState GetCurrentState();
+        void AddState(KeyboardKeyState state);
+
+    }
+
 }
