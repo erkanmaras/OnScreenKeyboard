@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IKeyboardKey.cs" />
     <Compile Include="KeyboardKeyState.cs" />
     <Compile Include="KeyStateAction.cs" />
     <Compile Include="IKeyboardBuilder.cs" />

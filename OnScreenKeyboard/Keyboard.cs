@@ -104,49 +104,49 @@ namespace OnScreenKeyboard
                         string keyCodeDeadTilde;
                         if (_isDeadTilde)
                         {
-                            keyCodeDeadTilde = currentState.KeyCodeDeadTilde;
+                            keyCodeDeadTilde = currentState.DeadTilde;
                             if (keyCodeDeadTilde.Length == 0)
                             {
-                                keyCodeDeadTilde = (_deadKeyCode + currentState.KeyCode);
+                                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
                             }
                         }
                         else if (!_isDeadGrave)
                         {
                             if (_isDeadAcute)
                             {
-                                keyCodeDeadTilde = currentState.KeyCodeDeadAcute;
+                                keyCodeDeadTilde = currentState.DeadAcute;
                                 if (keyCodeDeadTilde.Length == 0)
                                 {
-                                    keyCodeDeadTilde = (_deadKeyCode + currentState.KeyCode);
+                                    keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
                                 }
                             }
                             else if (_isDeadCircumflex)
                             {
-                                keyCodeDeadTilde = currentState.KeyCodeDeadCircumflex;
+                                keyCodeDeadTilde = currentState.DeadCircumflex;
                                 if (keyCodeDeadTilde.Length == 0)
                                 {
-                                    keyCodeDeadTilde = (_deadKeyCode + currentState.KeyCode);
+                                    keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
                                 }
                             }
                             else if (_isDeadDiaeresis)
                             {
-                                keyCodeDeadTilde = currentState.KeyCodeDeadDiaeresis;
+                                keyCodeDeadTilde = currentState.KDeadDiaeresis;
                                 if (keyCodeDeadTilde.Length == 0)
                                 {
-                                    keyCodeDeadTilde = (_deadKeyCode + currentState.KeyCode);
+                                    keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
                                 }
                             }
                             else
                             {
-                                keyCodeDeadTilde = currentState.KeyCode;
+                                keyCodeDeadTilde = currentState.Code;
                             }
                         }
                         else
                         {
-                            keyCodeDeadTilde = currentState.KeyCodeDeadGrave;
+                            keyCodeDeadTilde = currentState.DeadGrave;
                             if (keyCodeDeadTilde.Length == 0)
                             {
-                                keyCodeDeadTilde = (_deadKeyCode + currentState.KeyCode);
+                                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
                             }
                         }
                         if (_isControl)
@@ -177,23 +177,23 @@ namespace OnScreenKeyboard
                         ToggleAltGrState();
                         return;
                     case KeyStateAction.DeadTilde:
-                        SetDeadTildeState(currentState.KeyCode);
+                        SetDeadTildeState(currentState.Code);
                         ClearControlAltShiftState();
                         return;
                     case KeyStateAction.DeadAcute:
-                        SetDeadAcuteState(currentState.KeyCode);
+                        SetDeadAcuteState(currentState.Code);
                         ClearControlAltShiftState();
                         return;
                     case KeyStateAction.DeadGrave:
-                        SetDeadGraveState(currentState.KeyCode);
+                        SetDeadGraveState(currentState.Code);
                         ClearControlAltShiftState();
                         return;
                     case KeyStateAction.DeadCircumflex:
-                        SetDeadCircumflexState(currentState.KeyCode);
+                        SetDeadCircumflexState(currentState.Code);
                         ClearControlAltShiftState();
                         return;
                     case KeyStateAction.DeadDiaeresis:
-                        SetDeadDiaeresisState(currentState.KeyCode);
+                        SetDeadDiaeresisState(currentState.Code);
                         ClearControlAltShiftState();
                         return;
                 }

@@ -68,6 +68,7 @@ namespace OnScreenKeyboard
                     X = (gutterSize.Width + ((clientSize.Width + marginSize.Width)*cell.Position.X)),
                     Y = (gutterSize.Height + ((clientSize.Height + marginSize.Height)*cell.Position.Y))
                 };
+
                 var controlSize = new Size();
 
                 if (((cell.Position.X + cell.Size.Width) < Cols))

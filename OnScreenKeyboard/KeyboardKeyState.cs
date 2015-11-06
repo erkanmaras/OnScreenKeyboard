@@ -4,12 +4,12 @@
     {
         public KeyStateAction StateAction;
         public KeyStateStyle Style;
-        public string KeyCode = string.Empty;
-        public string KeyCodeDeadAcute = string.Empty;
-        public string KeyCodeDeadCircumflex = string.Empty;
-        public string KeyCodeDeadDiaeresis = string.Empty;
-        public string KeyCodeDeadGrave = string.Empty;
-        public string KeyCodeDeadTilde = string.Empty;
+        public string Code = string.Empty;
+        public string DeadAcute = string.Empty;
+        public string DeadCircumflex = string.Empty;
+        public string KDeadDiaeresis = string.Empty;
+        public string DeadGrave = string.Empty;
+        public string DeadTilde = string.Empty;
         public string Text = string.Empty;
     }
 }

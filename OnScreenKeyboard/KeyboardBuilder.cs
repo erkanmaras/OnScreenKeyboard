@@ -107,12 +107,12 @@ namespace OnScreenKeyboard
                 Text = GetAttributeValueOrDefault(stateElement, "Text", string.Empty),
                 StateAction = (KeyStateAction)Enum.Parse(typeof(KeyStateAction), GetAttributeValueOrDefault(stateElement, "Action", "Send")),
                 Style = (KeyStateStyle)Enum.Parse(typeof(KeyStateStyle), GetAttributeValueOrDefault(stateElement, "Style", "Default")),
-                KeyCode = GetAttributeValueOrDefault(stateElement, "Code"),
-                KeyCodeDeadCircumflex = GetAttributeValueOrDefault(stateElement, "DeadCircumflex"),
-                KeyCodeDeadAcute = GetAttributeValueOrDefault(stateElement, "DeadAcute"),
-                KeyCodeDeadDiaeresis = GetAttributeValueOrDefault(stateElement, "DeadDiaeresis"),
-                KeyCodeDeadGrave = GetAttributeValueOrDefault(stateElement, "DeadGrave"),
-                KeyCodeDeadTilde = GetAttributeValueOrDefault(stateElement, "DeadTilde")
+                Code = GetAttributeValueOrDefault(stateElement, "Code"),
+                DeadCircumflex = GetAttributeValueOrDefault(stateElement, "DeadCircumflex"),
+                DeadAcute = GetAttributeValueOrDefault(stateElement, "DeadAcute"),
+                KDeadDiaeresis = GetAttributeValueOrDefault(stateElement, "DeadDiaeresis"),
+                DeadGrave = GetAttributeValueOrDefault(stateElement, "DeadGrave"),
+                DeadTilde = GetAttributeValueOrDefault(stateElement, "DeadTilde")
             };
         }
 
