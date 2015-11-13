@@ -8,8 +8,8 @@ namespace OnScreenKeyboard
     {
         private const int WsExNoactivate = 0x8000000;
         private const int WsExToolwindow = 0x00000080;
-        private const int WmNcmousemove = 0xa0;
-        private const int WmNclbuttondown = 0xa1;
+        private const int WmNcMouseMove = 0xa0;
+        private const int WmNclButtonDown = 0xa1;
 
         private Keyboard _keyboard;
         private IntPtr _prevForegroundWindow = IntPtr.Zero;
@@ -39,9 +39,9 @@ namespace OnScreenKeyboard
 
         private void InitializeComponent()
         {
-            _keyboard = new Keyboard {Dock = DockStyle.Fill};
+            _keyboard = new Keyboard { Dock = DockStyle.Fill };
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(900, 297);
+            ClientSize = new Size(900, 300);
             ShowIcon = false;
             Controls.Add(_keyboard);
             Text = "Screen Keyboard";
@@ -50,14 +50,13 @@ namespace OnScreenKeyboard
             TopMost = true;
             TopLevel = true;
             Visible = false;
-            Shown += OnShownForm;
         }
 
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
             {
-                case WmNclbuttondown:
+                case WmNclButtonDown:
                     var foregroundWindow = NativeMethods.GetForegroundWindow();
                     if (foregroundWindow == Handle)
                     {
@@ -68,7 +67,7 @@ namespace OnScreenKeyboard
                         }
                     }
                     break;
-                case WmNcmousemove:
+                case WmNcMouseMove:
                     if (NativeMethods.IsWindow(_prevForegroundWindow))
                     {
                         NativeMethods.SetForegroundWindow(_prevForegroundWindow);
@@ -78,8 +77,9 @@ namespace OnScreenKeyboard
             base.WndProc(ref m);
         }
 
-        private void OnShownForm(object sender, EventArgs e)
+        protected override void OnShown(EventArgs e)
         {
+            base.OnShown(e);
             Location = ShownLocation;
             Visible = true;
         }

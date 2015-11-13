@@ -1,0 +1,10 @@
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\bin\Debug\OnScreenKeyboardDemo.exe
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\bin\Debug\OnScreenKeyboardDemo.pdb
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\bin\Debug\OnScreenKeyboard.dll
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\bin\Debug\OnScreenKeyboard.pdb
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\obj\Debug\OnScreenKeyboardDemo.csprojResolveAssemblyReference.cache
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\obj\Debug\OnScreenKeyboardDemo.FrmMain.resources
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\obj\Debug\OnScreenKeyboardDemo.Properties.Resources.resources
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\obj\Debug\OnScreenKeyboardDemo.csproj.GenerateResource.Cache
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\obj\Debug\OnScreenKeyboardDemo.exe
+C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboardDemo\obj\Debug\OnScreenKeyboardDemo.pdb

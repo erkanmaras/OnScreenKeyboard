@@ -6,6 +6,5 @@
         bool IsLocked { get; set; }
         KeyboardKeyState GetCurrentState();
         void AddState(KeyboardKeyState state);
-
     }
 }

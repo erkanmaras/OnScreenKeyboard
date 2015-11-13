@@ -55,8 +55,8 @@
     <State Style="AltGrShift" Text="Í" Code="Í" />
   </Key>
   <Key Top="0" Left="19" Height="2" Width="2">
-    <State Style="Default" Text="o" Code="o" KeyCodeDeadTilde="õ" DeadGrave="ò" DeadAcute="ó" DeadCircumflex="ô" DeadDiaeresis="ö" />
-    <State Style="Shift" Text="O" Code="O" KeyCodeDeadTilde="Õ" DeadGrave="Ò" DeadAcute="Ó" DeadCircumflex="Ô" DeadDiaeresis="Ö" />
+    <State Style="Default" Text="o" Code="o" DeadTilde="õ" DeadGrave="ò" DeadAcute="ó" DeadCircumflex="ô" DeadDiaeresis="ö" />
+    <State Style="Shift" Text="O" Code="O" DeadTilde="Õ" DeadGrave="Ò" DeadAcute="Ó" DeadCircumflex="Ô" DeadDiaeresis="Ö" />
     <State Style="AltGr" Text="ó" Code="ó" />
     <State Style="AltGrShift" Text="Ó" Code="Ó" />
   </Key>
@@ -104,8 +104,8 @@
   </Key>
 
   <Key Top="2" Left="4" Height="2" Width="2">
-    <State Style="Default" Text="a" Code="a" KeyCodeDeadTilde="ã" DeadGrave="à" DeadAcute="á" DeadCircumflex="â" DeadDiaeresis="ä" />
-    <State Style="Shift" Text="A" Code="A" KeyCodeDeadTilde="Ã" DeadGrave="À" DeadAcute="Á" DeadCircumflex="Â" DeadDiaeresis="Ä" />
+    <State Style="Default" Text="a" Code="a" DeadTilde="ã" DeadGrave="à" DeadAcute="á" DeadCircumflex="â" DeadDiaeresis="ä" />
+    <State Style="Shift" Text="A" Code="A" DeadTilde="Ã" DeadGrave="À" DeadAcute="Á" DeadCircumflex="Â" DeadDiaeresis="Ä" />
     <State Style="AltGr" Text="á" Code="á" />
     <State Style="AltGrShift" Text="Á" Code="Á" />
   </Key>
@@ -218,8 +218,8 @@
     <State Style="AltGrShift" Text="" Code="" />
   </Key>
   <Key Top="4" Left="15" Height="2" Width="2">
-    <State Style="Default" Text="n" Code="n" KeyCodeDeadTilde="ñ" />
-    <State Style="Shift" Text="N" Code="N" KeyCodeDeadTilde="Ñ" />
+    <State Style="Default" Text="n" Code="n" DeadTilde="ñ" />
+    <State Style="Shift" Text="N" Code="N" DeadTilde="Ñ" />
     <State Style="AltGr" Text="ñ" Code="ñ" />
     <State Style="AltGrShift" Text="Ñ" Code="Ñ" />
   </Key>

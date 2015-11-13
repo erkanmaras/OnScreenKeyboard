@@ -30,10 +30,6 @@ namespace OnScreenKeyboard
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             SetStyle(ControlStyles.ResizeRedraw, true);
             SetStyle(ControlStyles.UserPaint, true);
-
-            ControlAdded += Keyboard_ControlAdded;
-            ControlRemoved += Keyboard_ControlRemoved;
-            Resize += Keyboard_Resize;
         }
 
         public void BuildDefaultDefinition()
@@ -91,6 +87,28 @@ namespace OnScreenKeyboard
             _isDeadCircumflex = false;
             _isDeadDiaeresis = false;
             _deadKeyCode = string.Empty;
+        }
+
+        protected override void OnResize(EventArgs eventargs)
+        {
+            base.OnResize(eventargs);
+            SuspendLayout();
+            PerformControlLayout();
+            ResumeLayout();
+        }
+
+        protected override void OnControlAdded(ControlEventArgs e)
+        {
+            base.OnControlAdded(e);
+            var control = (KeyboardKey)e.Control;
+            control.Click += OnKeyClicked;
+        }
+
+        protected override void OnControlRemoved(ControlEventArgs e)
+        {
+            base.OnControlRemoved(e);
+            var control = (KeyboardKey)e.Control;
+            control.Click -= OnKeyClicked;
         }
 
         public void OnKeyClicked(object sender, EventArgs e)
@@ -198,18 +216,6 @@ namespace OnScreenKeyboard
                         return;
                 }
             }
-        }
-
-        private void Keyboard_ControlAdded(object sender, ControlEventArgs e)
-        {
-            var control = (KeyboardKey)e.Control;
-            control.Click += OnKeyClicked;
-        }
-
-        private void Keyboard_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            var control = (KeyboardKey)e.Control;
-            control.Click -= OnKeyClicked;
         }
 
         private void SetDeadAcuteState(string key)
@@ -321,13 +327,6 @@ namespace OnScreenKeyboard
             _isShift = !_isShift;
             SetKeyboardLock(KeyStateAction.Shift, _isShift);
             SetKeyboardState();
-        }
-
-        private void Keyboard_Resize(object sender, EventArgs e)
-        {
-            SuspendLayout();
-            PerformControlLayout();
-            ResumeLayout();
         }
 
         public static void ShowDialog(string caption, Point location,Size size)
