@@ -1,5 +1,0 @@
-C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.csprojResolveAssemblyReference.cache
-C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.dll
-C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.pdb
-C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.dll
-C:\Users\ErkanMaras.NEBIM\Documents\GitHub\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.pdb
