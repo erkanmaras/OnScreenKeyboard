@@ -121,21 +121,21 @@ namespace OnScreenKeyboard
                         string keyCodeDeadTilde;
                         if (_isDeadTilde)
                         {
-                            IsDeadTilde(currentState, out keyCodeDeadTilde);
+                            SetKeyCodeDeadTilde(currentState, out keyCodeDeadTilde);
                         }
                         else if (!_isDeadGrave)
                         {
                             if (_isDeadAcute)
                             {
-                                IsDeadAcute(currentState, out keyCodeDeadTilde);
+                                SetKeyCodeDeadAcute(currentState, out keyCodeDeadTilde);
                             }
                             else if (_isDeadCircumflex)
                             {
-                                IsDeadCircumflex(currentState, out keyCodeDeadTilde);
+                                SetKeyCodeDeadCircumflex(currentState, out keyCodeDeadTilde);
                             }
                             else if (_isDeadDiaeresis)
                             {
-                                IsDeadDiaeresis(currentState, out keyCodeDeadTilde);
+                                SetKeyCodeDeadDiaeresis(currentState, out keyCodeDeadTilde);
                             }
                             else
                             {
@@ -144,7 +144,7 @@ namespace OnScreenKeyboard
                         }
                         else
                         {
-                            IsDeadGrave(currentState, out keyCodeDeadTilde);
+                            SetKeyCodeDeadGrave(currentState, out keyCodeDeadTilde);
                         }
                         if (_isControl)
                         {
@@ -197,7 +197,7 @@ namespace OnScreenKeyboard
             }
         }
 
-        private void IsDeadTilde(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        private void SetKeyCodeDeadTilde(KeyboardKeyState currentState, out string keyCodeDeadTilde)
         {
             keyCodeDeadTilde = currentState.DeadTilde;
             if (keyCodeDeadTilde.Length == 0)
@@ -206,7 +206,7 @@ namespace OnScreenKeyboard
             }
         }
 
-        private void IsDeadGrave(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        private void SetKeyCodeDeadGrave(KeyboardKeyState currentState, out string keyCodeDeadTilde)
         {
             keyCodeDeadTilde = currentState.DeadGrave;
             if (keyCodeDeadTilde.Length == 0)
@@ -215,7 +215,7 @@ namespace OnScreenKeyboard
             }
         }
 
-        private void IsDeadAcute(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        private void SetKeyCodeDeadAcute(KeyboardKeyState currentState, out string keyCodeDeadTilde)
         {
             keyCodeDeadTilde = currentState.DeadAcute;
             if (keyCodeDeadTilde.Length == 0)
@@ -224,7 +224,7 @@ namespace OnScreenKeyboard
             }
         }
 
-        private void IsDeadCircumflex(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        private void SetKeyCodeDeadCircumflex(KeyboardKeyState currentState, out string keyCodeDeadTilde)
         {
             keyCodeDeadTilde = currentState.DeadCircumflex;
             if (keyCodeDeadTilde.Length == 0)
@@ -233,7 +233,7 @@ namespace OnScreenKeyboard
             }
         }
 
-        private void IsDeadDiaeresis(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        private void SetKeyCodeDeadDiaeresis(KeyboardKeyState currentState, out string keyCodeDeadTilde)
         {
             keyCodeDeadTilde = currentState.DeadDiaeresis;
             if (keyCodeDeadTilde.Length == 0)
