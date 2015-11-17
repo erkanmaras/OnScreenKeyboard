@@ -110,7 +110,7 @@ namespace OnScreenKeyboard
                 Code = GetAttributeValueOrDefault(stateElement, "Code"),
                 DeadCircumflex = GetAttributeValueOrDefault(stateElement,  KeyStateAction.DeadCircumflex.ToString()),
                 DeadAcute = GetAttributeValueOrDefault(stateElement,  KeyStateAction.DeadAcute.ToString()),
-                KDeadDiaeresis = GetAttributeValueOrDefault(stateElement, KeyStateAction.DeadDiaeresis.ToString()),
+                DeadDiaeresis = GetAttributeValueOrDefault(stateElement, KeyStateAction.DeadDiaeresis.ToString()),
                 DeadGrave = GetAttributeValueOrDefault(stateElement, KeyStateAction.DeadGrave.ToString()),
                 DeadTilde = GetAttributeValueOrDefault(stateElement, KeyStateAction.DeadTilde.ToString())
             };

@@ -10,7 +10,6 @@ namespace OnScreenKeyboard
 {
     public class Keyboard : TableLayoutPanel
     {
-
         private bool _isAlt;
         private bool _isAltGr;
         private bool _isCapsLock;
@@ -43,7 +42,7 @@ namespace OnScreenKeyboard
                     definition = XDocument.Load(reader);
                 }
             }
-            new KeyboardBuilder().Build(definition,this);
+            new KeyboardBuilder().Build(definition, this);
         }
 
         public void AddKey(KeyboardKey key, Point keyLocation, Size keySize)
@@ -122,37 +121,21 @@ namespace OnScreenKeyboard
                         string keyCodeDeadTilde;
                         if (_isDeadTilde)
                         {
-                            keyCodeDeadTilde = currentState.DeadTilde;
-                            if (keyCodeDeadTilde.Length == 0)
-                            {
-                                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
-                            }
+                            IsDeadTilde(currentState, out keyCodeDeadTilde);
                         }
                         else if (!_isDeadGrave)
                         {
                             if (_isDeadAcute)
                             {
-                                keyCodeDeadTilde = currentState.DeadAcute;
-                                if (keyCodeDeadTilde.Length == 0)
-                                {
-                                    keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
-                                }
+                                IsDeadAcute(currentState, out keyCodeDeadTilde);
                             }
                             else if (_isDeadCircumflex)
                             {
-                                keyCodeDeadTilde = currentState.DeadCircumflex;
-                                if (keyCodeDeadTilde.Length == 0)
-                                {
-                                    keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
-                                }
+                                IsDeadCircumflex(currentState, out keyCodeDeadTilde);
                             }
                             else if (_isDeadDiaeresis)
                             {
-                                keyCodeDeadTilde = currentState.KDeadDiaeresis;
-                                if (keyCodeDeadTilde.Length == 0)
-                                {
-                                    keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
-                                }
+                                IsDeadDiaeresis(currentState, out keyCodeDeadTilde);
                             }
                             else
                             {
@@ -161,11 +144,7 @@ namespace OnScreenKeyboard
                         }
                         else
                         {
-                            keyCodeDeadTilde = currentState.DeadGrave;
-                            if (keyCodeDeadTilde.Length == 0)
-                            {
-                                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
-                            }
+                            IsDeadGrave(currentState, out keyCodeDeadTilde);
                         }
                         if (_isControl)
                         {
@@ -215,6 +194,51 @@ namespace OnScreenKeyboard
                         ClearControlAltShiftState();
                         return;
                 }
+            }
+        }
+
+        private void IsDeadTilde(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        {
+            keyCodeDeadTilde = currentState.DeadTilde;
+            if (keyCodeDeadTilde.Length == 0)
+            {
+                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
+            }
+        }
+
+        private void IsDeadGrave(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        {
+            keyCodeDeadTilde = currentState.DeadGrave;
+            if (keyCodeDeadTilde.Length == 0)
+            {
+                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
+            }
+        }
+
+        private void IsDeadAcute(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        {
+            keyCodeDeadTilde = currentState.DeadAcute;
+            if (keyCodeDeadTilde.Length == 0)
+            {
+                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
+            }
+        }
+
+        private void IsDeadCircumflex(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        {
+            keyCodeDeadTilde = currentState.DeadCircumflex;
+            if (keyCodeDeadTilde.Length == 0)
+            {
+                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
+            }
+        }
+
+        private void IsDeadDiaeresis(KeyboardKeyState currentState, out string keyCodeDeadTilde)
+        {
+            keyCodeDeadTilde = currentState.DeadDiaeresis;
+            if (keyCodeDeadTilde.Length == 0)
+            {
+                keyCodeDeadTilde = (_deadKeyCode + currentState.Code);
             }
         }
 
@@ -329,11 +353,13 @@ namespace OnScreenKeyboard
             SetKeyboardState();
         }
 
-        public static void ShowDialog(string caption, Point location,Size size)
+        #region static methods
+
+        public static void ShowDialog(string caption, Point location, Size size)
         {
             new System.Threading.Tasks.Task(() =>
             {
-                var form = new KeyboardDialog { Text = caption, ShownLocation = location, ClientSize = size};
+                var form = new KeyboardDialog { Text = caption, ShownLocation = location, ClientSize = size };
                 form.ShowDialog();
 
             }).Start();
@@ -347,6 +373,9 @@ namespace OnScreenKeyboard
                 form.ShowDialog();
             }).Start();
         }
+
+        #endregion //static methods
+
 
     }
 }
