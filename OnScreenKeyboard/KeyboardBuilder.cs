@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Linq;
 
 // add support json format
+// add yaml file
 namespace OnScreenKeyboard
 {
     internal class KeyboardBuilder : IKeyboardBuilder
