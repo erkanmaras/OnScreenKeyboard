@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Xml.Linq;
 
+// add support json format
 namespace OnScreenKeyboard
 {
     internal class KeyboardBuilder : IKeyboardBuilder
